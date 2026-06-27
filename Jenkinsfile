@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Vennilavanguvi/Trend.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t trend-app .'
