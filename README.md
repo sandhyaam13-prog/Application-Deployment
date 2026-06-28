@@ -158,6 +158,19 @@ Include screenshots of:
 
 - update read me
 
+
+Monitoring
+
+Installed Kubernetes Metrics Server (Open Source).
+
+Verified cluster health using:
+
+kubectl top nodes
+
+kubectl top pods
+
+Metrics Server successfully collects CPU and Memory utilization for Kubernetes nodes and pods.
+
 ---
 
 Author
