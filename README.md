@@ -1,150 +1,163 @@
-# Application-Deployment
-
-
-
 Application Deployment Project
-
-
 
 Overview
 
-This project demonstrates deployment of a React application using Docker, Terraform, Kubernetes and Jenkins CI/CD concepts.
+This project demonstrates the deployment of the Trend web application using Docker, Terraform, Jenkins, Kubernetes (Amazon EKS), and Docker Hub with an automated CI/CD pipeline.
 
+---
 
+Repository Used
 
-Repository Used:
+Original Repository:
+https://github.com/Vennilavanguvi/Trend.git
 
-https://github.com/Vennilavangui/Trend.git
+Project Repository:
+https://github.com/sandhyaam13-prog/Application-Deployment
 
+---
 
+Architecture
 
-1)Application Deployment
+GitHub
+↓
+Jenkins
+↓
+Docker Build
+↓
+Docker Hub
+↓
+Amazon EKS
+↓
+Kubernetes Deployment
+↓
+AWS LoadBalancer
+↓
+Live Application
 
-Cloned the application repository.
+---
 
-Built the application using Docker.
+1. Application Deployment
 
-Verified application deployment on AWS EC2.
+- Cloned the Trend application repository.
+- Dockerized the application.
+- Built the Docker image.
+- Deployed the application to Amazon EKS.
+- Exposed the application using Kubernetes LoadBalancer.
+- Successfully verified the application through the LoadBalancer URL.
 
-Application accessible through EC2 public IP.
+---
 
+2. Docker
 
+- Created Dockerfile.
+- Built Docker image.
+- Tagged Docker image.
+- Pushed Docker image to Docker Hub.
 
-2)Docker
-
-Created Dockerfile.
-
-Built Docker image.
-
-Pushed image to DockerHub.
-
-
-
-3)Docker Image:
+Docker Image:
 
 sandhyamanikanta/trend-app:v1
 
+---
 
-
-4)Terraform
+3. Terraform
 
 Created Terraform configuration files for:
 
-Security Group
+- EC2 Instance
+- Security Group
+- Variables
+- Outputs
 
-EC2 Instance
+Files:
 
-Outputs
+- main.tf
+- variables.tf
+- outputs.tf
 
-Variables
+Executed:
 
+- terraform init
+- terraform validate
+- terraform plan
+- terraform apply
 
+---
 
-5)Files:
-
-main.tf
-
-outputs.tf
-
-variables.tf
-
-
-
-6)Kubernetes
+4. Kubernetes
 
 Created:
 
-deployment.yaml
+- deployment.yaml
+- service.yaml
 
-service.yaml
-
-
-
-7)Deployment uses Docker image:
+Deployment Image:
 
 sandhyamanikanta/trend-app:v1
 
-
-
-8)Service Type:
+Service Type:
 
 LoadBalancer
 
+Successfully deployed application on Amazon EKS.
 
+---
 
-9)Jenkins Pipeline
+5. Jenkins CI/CD Pipeline
 
-Created Jenkinsfile with stages:
+Created a Declarative Jenkins Pipeline with the following stages:
 
-1\. Checkout
+1. Checkout Source Code
+2. Build Docker Image
+3. Push Docker Image to Docker Hub
+4. Deploy Application to Kubernetes
 
-2\. Build Docker Image
+Integrated Jenkins with GitHub using Webhooks for automatic build on every push.
 
-3\. Push Docker Image
+---
 
-4\. Deploy Kubernetes
+6. Docker Hub Repository
 
+Repository:
 
+sandhyamanikanta/trend-app
 
-10)Screenshots Included
+Image:
 
-Docker installation
+sandhyamanikanta/trend-app:v1
 
-Docker image build
+---
 
-Docker container running
+7. Tools Used
 
-Application running on EC2
+- AWS EC2
+- Amazon EKS
+- Docker
+- Docker Hub
+- Terraform
+- Kubernetes
+- Jenkins
+- GitHub
 
-Terraform init
+---
 
-Terraform validate
+8. Screenshots
 
-Kubernetes YAML creation
+Include screenshots of:
 
-GitHub repository push
+- Terraform init
+- Terraform apply
+- Docker image build
+- Docker Hub repository
+- Jenkins pipeline success
+- kubectl get nodes
+- kubectl get pods
+- kubectl get svc
+- Application running
+- GitHub repository
 
+---
 
+Author
 
-11)Tools Used
-
-AWS EC2
-
-Docker
-
-DockerHub
-
-Terraform
-
-Kubernetes
-
-Jenkins
-
-GitHub
-
-
-
-\#Author
-
-Sandhya Krishna
-
+Sandhya M
