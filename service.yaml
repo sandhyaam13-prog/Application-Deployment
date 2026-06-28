@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-06-27T16:49:18Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: trend-app
+  name: trend-app
+  namespace: default
+  resourceVersion: "10870"
+  uid: 7cfb23b8-1083-4d77-a96d-155b84ba203b
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.100.124.180
+  clusterIPs:
+  - 10.100.124.180
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31193
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: trend-app
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a7cfb23b810834d77a96d155b84ba203-1383600385.ap-south-1.elb.amazonaws.com
