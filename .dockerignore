@@ -1,0 +1,7 @@
+.git
+.gitignore
+README.md
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+*.log
